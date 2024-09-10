@@ -1,46 +1,66 @@
-#include <stdio.h>
+#include<stdio.h>
+void main()
+{
+int i,j,m=1,r,c,A[10][10],B[10][3];
+printf("Enter number of rows and columns: ");
+scanf("%d%d",&r,&c);
+printf("Enter matrix elements:\n");
+for(i=0;i<r;i++)
+{
+printf("Enter elements of row %d: ",i+1);
+for(j=0;j<c;j++)
+{
 
-int main() {
-    int r, c, i, j, k;
-    printf("Enter the number of rows and columns: ");
-    scanf("%d %d", &r, &c);
+scanf("%d",&A[i][j]);
 
-    int A[r][c], B[r * c + 1][3];
-
-    printf("Enter the elements of the matrix:\n");
-    for (i = 0; i < r; i++) {
-        for (j = 0; j < c; j++) {
-            scanf("%d", &A[i][j]);
-        }
-    }
-    printf("Entered Matrix is:\n");
-    for (i = 0; i < r; i++) {
-        for (j = 0; j < c; j++) {
-            printf("%d\t", A[i][j]);
-        }
-        printf("\n");
-    }
-
-    k = 1;
-
-    for (i = 0; i < r; i++) {
-        for (j = 0; j < c; j++) {
-            if (A[i][j] != 0) {
-                B[k][0] = i;
-                B[k][1] = j;
-                B[k][2] = A[i][j];
-                k++;
-            }
-        }
-    }
-    B[0][0] = r;
-    B[0][1] = c;
-    B[0][2] = k - 1;
-
-    printf("Sparse representation is:\n");
-    printf("Row\tColumn\tValue\n");
-    for (i = 0; i < k; i++) {
-        printf("%d\t%d\t%d\n", B[i][0], B[i][1], B[i][2]);
-    }
-    return 0;
 }
+}
+printf("The matrix is:\n");
+for(i=0;i<r;i++)
+{
+for(j=0;j<c;j++)
+{
+printf("%d\t",A[i][j]);
+
+}
+printf("\n");
+
+}
+B[0][0]=r;
+B[0][1]=c;
+for(i=0;i<r;i++)
+{
+for(j=0;j<c;j++)
+{
+if(A[i][j]!=0)
+{
+B[m][0]=i;
+B[m][1]=j;
+B[m][2]=A[i][j];
+m++;
+}
+}
+
+}
+
+B[0][2]=m-1;
+printf("\nROW\tCOLUMN\tVALUE\n");
+for(i=0;i<m;i++)
+{
+
+for(j=0;j<3;j++)
+{
+
+printf("%d\t",B[i][j]);
+
+}
+
+printf("\n");
+
+}
+
+}
+	
+
+	
+
