@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TABLE_SIZE 5 // Define the size of the hash table
+
+int h[TABLE_SIZE] = {0}; // Initialize the hash table with all elements as 0
+
+// Function to insert a value into the hash table
+void insert() {
+    int key, index, i, hkey;
+    printf("\nEnter a value to insert into the hash table: ");
+    scanf("%d", &key);
+
+    hkey = key % TABLE_SIZE; // Calculate the hash key
+
+    for (i = 0; i < TABLE_SIZE; i++) {
+        index = (hkey + i) % TABLE_SIZE; // Linear probing
+        if (h[index] == 0) { // Check if the slot is empty
+            h[index] = key; // Insert the key
+            printf("Value %d inserted at index %d.\n", key, index);
+            return;
+        }
+    }
+    // If the table is full
+    printf("\nElement cannot be inserted as the table is full.\n");
+}
+
+// Function to search for a value in the hash table
+void search() {
+    int key, index, i, hkey;
+    printf("\nEnter the value to search in the hash table: ");
+    scanf("%d", &key);
+
+    hkey = key % TABLE_SIZE; // Calculate the hash key
+
+    for (i = 0; i < TABLE_SIZE; i++) {
+        index = (hkey + i) % TABLE_SIZE; // Linear probing
+        if (h[index] == key) { // Check if the value matches
+            printf("Value %d found at index %d.\n", key, index);
+            return;
+        }
+        if (h[index] == 0) { // Stop searching if an empty slot is encountered
+            break;
+        }
+    }
+    // If the value is not found
+    printf("Value %d not found in the hash table.\n", key);
+}
+
+// Function to display the hash table
+void display() {
+    printf("\nElements in the hash table:\n");
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        if (h[i] == 0)
+            printf("Index %d: [Empty]\n", i);
+        else
+            printf("Index %d: %d\n", i, h[i]);
+    }
+}
+
+// Main function
+int main() {
+    int opt;
+
+    while (1) {
+        printf("\nPress 1. Insert\t2. Display\t3. Search\t4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &opt);
+
+        switch (opt) {
+            case 1:
+                insert();
+                break;
+            case 2:
+                display();
+                break;
+            case 3:
+                search();
+                break;
+            case 4:
+                printf("Exiting the program.\n");
+                exit(0);
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    }
+    return 0;
+}
