@@ -1,0 +1,15 @@
+echo "Enter your name:"
+read name
+echo "Enter your Semester:"
+read semester
+echo "Enter your Batch:"
+read batch
+echo "Enter your Roll number :"
+read rollno
+echo "Enter your Register number :"
+read registerno
+echo "Name :" $name
+echo "Semester :"$semester
+echo "Batch :" $batch
+echo "Rollnumber :"$rollno
+echo "Register number :"$registerno
