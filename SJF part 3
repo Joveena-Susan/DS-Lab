@@ -1,0 +1,27 @@
+printf(" P%d ", pqueue[i]);
+
+}
+
+printf("\n ");
+
+for(int i = 0; i < n; i++){
+
+printf("-------");
+
+}
+
+printf("\n0");
+
+int current_time = 0;
+
+for(int i = 0; i < n; i++){
+
+current_time += burst_time[i];
+
+printf(" %d", current time);
+
+}
+
+printf("\n");
+
+}
