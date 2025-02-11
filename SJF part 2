@@ -1,0 +1,49 @@
+}
+
+}
+
+wait_time[0]=0; for(i=1;i<n;i++){
+
+wait_time[i] = wait_time[i - 1] + burst_time[i - 1];
+
+avg_wait+=wait_time[i];
+
+}
+
+avg_wait/=n;
+
+for(i=0;i<n;i++){
+
+turnaround_time[i] = wait_time[i] + burst_time[i];
+
+avg_tat+=turnaround_time[i];
+
+}
+
+avg_tat/=n;
+
+printf("Process\tBurst Time\tWait Time\tTurnaround Time\n"); for(i=0;i<n;i++){
+
+printf("P%d\t%d\t\t%d\t\t%d\n",pqueue[i],burst_time[i], wait_time[i],turnarou nd_time[i]);
+
+}
+
+printf("\n");
+
+printf("Average Wait Time: %.2f\nAverage Turnaround Time: %.2f\n", avg_wait, avg_tat);
+
+printf("\n");
+
+//Gantt Chart
+
+printf(" ");
+
+for(int i = 0; i < n; i++){
+
+printf("-------");
+
+}
+
+printf("\n");
+
+for(int i = 0; i < n; i++){
