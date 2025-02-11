@@ -1,0 +1,85 @@
+avg_tat+=turnaround_time[i];
+
+12/4
+
+}
+
+avg_tat/=n;
+
+Experi
+
+printf("Process\tBurst Time\tWait Time\tTurnaround Time\n");
+
+for(i=0;i<n;i++){
+
+printf("P%d\t%d\t\t%d\t\t%d\n",i+1,burst_time[i],wait_time[i],turnaround_tim e[i]);
+
+AIM
+
+}
+
+To
+
+printf("\n");
+
+printf("Average Wait Time: %.2f\nAverage Turnaround Time: %.2f\n",
+
+ALGO
+
+avg_wait, avg_tat);
+
+printf("\n");
+
+printf(" ");
+
+for(int i = 0 i < n i++){
+
+FIRS
+
+printf("-------");
+
+}
+
+printf("\n/");
+
+for(int i = 0 i < n; i++){
+
+printf(" P%d ", i+1);
+
+Step
+
+Step
+
+Step
+
+Step
+
+}
+
+printf("\n ");
+
+for(int i = 0 i < n i++){
+
+printf("-------");
+
+}
+
+printf("\n0");
+
+int current_time = 0 :
+
+for(int i = 0 i < n i++){
+
+current_time += burst_time[i];
+
+printf(" %d", current_time);
+
+}
+
+printf("\n");
+
+Ste
+
+St
+
+}
